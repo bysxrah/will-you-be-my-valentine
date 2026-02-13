@@ -152,92 +152,60 @@ html, body {
 
   .desktop-layout { display: none; }
 
+  html, body {
+    height: 100%;
+    overflow: hidden; /* prevent scroll */
+  }
+
   .mobile-layout {
     display: flex;
     flex-direction: column;
     align-items: center;
+    justify-content: flex-start;
     height: 100vh;
-    padding: 30px 20px 60px 20px;
-    text-align: center;
     position: relative;
   }
 
   .mobile-title {
-  font-family: "Billa Mount";
-  font-size: 36px;
-  font-weight: normal;
-  color: #b00000;
-
-  margin-top: 40px;   /* ← add this */
-  margin-bottom: 30px;
-}
-
-
-  .mobile-bg {
-    width: 100%;
-    max-width: 420px;
-    height: auto;
-    object-fit: contain;
-    margin-top: -150px;
+    font-family: "Billa Mount";
+    font-size: 36px;
+    font-weight: normal;
+    color: #b00000;
+    margin-top: 40px;
+    margin-bottom: 20px;
   }
 
-  /* MOBILE YES BUTTON */
+  /* KEY FIX */
+  .mobile-bg {
+    height: 60vh;        /* scales with screen */
+    width: auto;
+    object-fit: contain; /* ensures full image visible */
+  }
+
+  /* Buttons positioned relative to viewport */
 
   .mobile-yes {
-  position: absolute;
-  top: auto;
-  left: 110px;
-  bottom: 250px;
-  font-size: 14px;
-}
-
-/* Thin vertical line under YES */
-.mobile-yes::after {
-  content: "";
-  position: absolute;
-  top: 26px;              /* distance below text */
-  left: 50%;
-  transform: translateX(-50%);
-  width: 1px;
-  height: 18px;           /* line length */
-  background-color: #b00000;
-  opacity: 0.8;
-}
-
-
-  /* MOBILE NO BUTTON — FIXED */
+    position: absolute;
+    bottom: 140px;
+    left: 90px;
+    font-size: 14px;
+  }
 
   .mobile-no {
     position: absolute;
-    top: auto;        /* clear desktop top */
-    left: auto;       /* clear desktop left */
-    bottom: 285px;
-    right: 50px;
-    font-size: 12px;
+    bottom: 140px;
+    right: 90px;
+    font-size: 14px;
   }
 
-  /* Mobile popover scale */
-
+  /* Popover scaling */
   .envelope-wrapper {
     width: 320px;
   }
 
-  .letter-text {
-    font-size: 24px;
-  }
-
-  .letter-body {
-    font-size: 11px;
-    margin-top: -15px;
-  }
-
-  .letter-links {
-    margin-top: -5px;
-  }
-
-  .emoji-link {
-    font-size: 18px;
-  }
+  .letter-text { font-size: 24px; }
+  .letter-body { font-size: 11px; }
+  .emoji-link { font-size: 18px; }
 }
 /* ================= COPYRIGHT ================= */
 
