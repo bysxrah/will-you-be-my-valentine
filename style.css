@@ -146,24 +146,26 @@ html, body {
   text-decoration: none;
 }
 
-/* ================= MOBILE ================= */
-
 @media (max-width: 768px) {
 
   .desktop-layout { display: none; }
 
   html, body {
     height: 100%;
-    overflow: hidden; /* prevent scroll */
+    overflow: hidden;
   }
 
   .mobile-layout {
+    position: relative;
+    height: 100vh;
     display: flex;
     flex-direction: column;
     align-items: center;
     justify-content: flex-start;
-    height: 100vh;
-    position: relative;
+
+    /* THIS is the key */
+    background: url("images/mobile-bg.png") no-repeat center bottom;
+    background-size: contain;
   }
 
   .mobile-title {
@@ -171,42 +173,29 @@ html, body {
     font-size: 36px;
     font-weight: normal;
     color: #b00000;
-    margin-top: 40px;
-    margin-bottom: 20px;
+    margin-top: 60px;
   }
-
-  /* KEY FIX */
-  .mobile-bg {
-    height: 60vh;        /* scales with screen */
-    width: auto;
-    object-fit: contain; /* ensures full image visible */
-  }
-
-  /* Buttons positioned relative to viewport */
 
   .mobile-yes {
     position: absolute;
     bottom: 140px;
-    left: 90px;
+    left: 80px;
     font-size: 14px;
   }
 
   .mobile-no {
     position: absolute;
     bottom: 140px;
-    right: 90px;
+    right: 80px;
     font-size: 14px;
   }
 
-  /* Popover scaling */
+  /* scale popover */
   .envelope-wrapper {
     width: 320px;
   }
-
-  .letter-text { font-size: 24px; }
-  .letter-body { font-size: 11px; }
-  .emoji-link { font-size: 18px; }
 }
+
 /* ================= COPYRIGHT ================= */
 
 .copyright {
