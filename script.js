@@ -1,10 +1,10 @@
-const yes = document.querySelector(".yes");
-const popover = document.getElementById("popover");
+function openPopover() {
+  document.getElementById("popover").classList.add("show");
+}
 
-yes.addEventListener("click", () => {
-  popover.classList.add("show");
-});
-
-popover.addEventListener("click", () => {
-  popover.classList.remove("show");
-});
+function closePopover(event) {
+  // Only close if clicking outside envelope
+  if (event.target.id === "popover") {
+    document.getElementById("popover").classList.remove("show");
+  }
+}
